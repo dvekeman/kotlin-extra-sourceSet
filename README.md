@@ -58,6 +58,8 @@ configurations {
 
 For completeness, the groovy equivalent
 
+**build.gradle**
+
 ```
 plugins {
     id 'kotlin2js' version '1.3.21'
@@ -104,4 +106,19 @@ compileKotlin2Js {
         main = "noCall"
     }
 }
+```
+
+**settings.gradle**
+
+```
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "kotlin2js") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+}
+rootProject.name = "extraSourceSetExample"
 ```
