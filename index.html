@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extra source set example</title>
+
+    <script src="./scripts/kotlin.js"></script>
+    <script src="./build/classes/kotlin/commonMain/extraSourceSetExample_commonMain.js"></script>
+    <script src="./build/classes/kotlin/main/extraSourceSetExample.js"></script>
+
+</head>
+<body>
+
+<span>Look at the <strong>console</strong> too!</span>
+
+<div>
+    <span>Foo ... </span>
+    <span id="foo"></span>
+</div>
+<script>
+    document.getElementById("foo").innerText = extraSourceSetExample.com.bar();
+</script>
+
+</body>
+</html>
